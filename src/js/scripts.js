@@ -1,5 +1,19 @@
 
 $(document).ready(function () {
+
+  // Form interaction classes
+  $('.field input, .field textarea').focus(function () {
+    $(this).parent().addClass('focused');
+  }).blur(function () {
+    tmpval = $(this).val();
+    $(this).parent().removeClass('focused');
+    if (tmpval == '') {
+      $(this).parent().removeClass('filled');
+    } else {
+      $(this).parent().addClass('filled');
+    }
+  });
+
   // window scroll functions
   $(window).scroll(function () {
 

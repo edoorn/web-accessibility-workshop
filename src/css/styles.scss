@@ -80,6 +80,15 @@ $gutter: 30px;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+@mixin card-clip {
+  -webkit-clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
+  clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
+}
+
+@mixin remove-animation {
+  animation: none;
+   -webkit-animation: none;
+}
 
 // Global -------------------------
 * {
@@ -827,7 +836,7 @@ a {
   border: none;
   outline: none;
   display: inline-block;
-  background: linear-gradient(90deg, $primary-dark 0%, $primary-dark 50%, $primary-color 50%, $primary-color 100%) no-repeat;
+  background: linear-gradient(90deg, $primary-dark 0%, $primary-color 50%, $primary-color 50%, $primary-color 100%) no-repeat;
   background-size: 210% 100%;
   background-position: 100% 0%;
   color: white;
@@ -844,8 +853,6 @@ a {
     background-position: 0% 0%;
     font-style: normal;
     text-decoration: none;
-    // -webkit-clip-path: polygon(25px 0%, 100% 0%, calc(100% - 25px) 100%, 0% 100%);
-    // clip-path: polygon(25px 0%, 100% 0%, calc(100% - 25px) 100%, 0% 100%);
     @include angle-clip;
   }
 
@@ -1011,9 +1018,9 @@ section {
 
 // basic card
 .card {
-  background: white;
-  border-radius: $radius;
-  padding: $gutter;
+  background: $pale-gray;
+  padding: $gutter/2;
+  @include card-clip;
 }
 
 // Card Slider
@@ -1034,10 +1041,15 @@ section {
       box-shadow: 0px 2px 8px rgba(82, 103, 114, 0.25);
       overflow: hidden;
       @include transition;
+      h3 {
+        text-align: center;
+        margin: $gutter/2 0 0;
+        @include transition;
+      }
       img {
-        width: calc(100% + 80px);
-        margin-left: -$gutter;
-        margin-top: -$gutter;
+        width: calc(100% + 40px);
+        margin-left: -$gutter/2;
+        margin-top: -$gutter/2;
         max-width: none;
         height: auto;
         @include transition;
@@ -1048,6 +1060,10 @@ section {
         width: calc(100% + 40px);
         height: calc(100% + 40px);
         box-shadow: 0px 4px 12px rgba(82, 103, 114, 0.5);
+        text-decoration: none;
+        h3 {
+          color: $primary-dark;
+        }
       }
     }
 
@@ -1207,7 +1223,7 @@ section {
 
 // Bottom
 section#bottom {
-  background: linear-gradient(#056db8 0%, #16244F 100%);
+  background: linear-gradient(60deg, $primary-color 0%, $primary-dark 100%);
   margin-bottom: -1px;
 }
 
@@ -1220,8 +1236,7 @@ section#bottom {
     margin: 0;
 
     p {
-      font-family: $serif;
-      font-style: italic;
+      font-family: $title-font;
       font-weight: 300;
       margin-bottom: $gutter;
       position: relative;
@@ -1231,7 +1246,7 @@ section#bottom {
         width: auto;
 
         path {
-          fill: $primary-color;
+          fill: white;
         }
 
         &.fa-quote-left {
@@ -1262,8 +1277,8 @@ section#bottom {
     blockquote {
       p {
         padding: 0 $gutter*2.5;
-        font-size: 1.5rem;
-        line-height: 2.5rem;
+        font-size: 2rem;
+        line-height: 2.8rem;
 
         .svg-inline--fa {
           height: 60px;
@@ -1278,7 +1293,7 @@ section#bottom {
       p {
         padding: 0 $gutter*1.5;
         font-size: 1.25rem;
-        line-height: 2.25rem;
+        line-height: 2.1rem;
 
         .svg-inline--fa {
           height: 30px;
@@ -1320,15 +1335,14 @@ section#bottom {
   padding: $gutter $gutter/2;
   justify-content: center;
 
-  img {
+  a {
     padding: $gutter/2;
     height: auto;
     align-self: center;
     position: relative;
   }
-
   &.logos-visible {
-    img {
+    a {
       opacity: 0;
       animation: fadeInGrow 0.25s ease;
       animation-fill-mode: forwards;
@@ -1342,7 +1356,7 @@ section#bottom {
   }
 
   &.logos-hidden {
-    img {
+    a {
       animation: fadeOutShrink 0.25s ease;
       animation-fill-mode: forwards;
 
@@ -1353,27 +1367,32 @@ section#bottom {
       }
     }
   }
+  @media (prefers-reduced-motion: reduce) {
+    a {
+      @include remove-animation;
+    }
+  }
 
   @media (min-width: 960px) {
-    img {
+    a {
       width: 16.6666%;
     }
   }
 
   @media (min-width: 600px) and (max-width: 959px) {
-    img {
+    a {
       width: 25%;
     }
   }
 
   @media (min-width: 480px) and (max-width: 599px) {
-    img {
+    a {
       width: 33.3333%;
     }
   }
 
   @media (max-width: 479px) {
-    img {
+    a {
       width: 50%;
     }
   }
@@ -1386,7 +1405,7 @@ section#bottom {
   background: $gray;
   .contact-cta {
     h2 {
-      color: $light-gray;
+      color: $pale-gray;
       margin-top: 0;
     }
 
@@ -1469,8 +1488,7 @@ form {
     outline: none;
     padding: $gutter/2;
     margin: -$gutter/2;
-    background: rgba(22, 36, 79, .1);
-    border-radius: $radius;
+    background: $dark-gray;
     @include transition;
   }
 
@@ -1504,8 +1522,7 @@ form {
       border: none;
       background: none;
       outline: none;
-      background: rgba(255, 255, 255, .1);
-      border-radius: $radius;
+      background: rgba(0, 0, 0, .1);
       display: block;
       width: 100%;
       color: white;
@@ -1531,7 +1548,7 @@ form {
 
       input,
       textarea {
-        background: $dark-gray;
+        background: $gray;
       }
     }
   }
@@ -1656,6 +1673,20 @@ select:-webkit-autofill {
       text-align: center;
       margin: 0 auto;
       width: 100%;
+    }
+  }
+}
+
+
+// Social links
+.footer-social {
+  ul {
+    li {
+      display: inline-block;
+      list-style-type: none;
+      i {
+        color: white;
+      }
     }
   }
 }
