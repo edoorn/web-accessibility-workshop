@@ -11,15 +11,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="src/img/hi-logomark.png">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="./src/js/scripts.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/solid.js"
-      integrity="sha384-8Lgyylu0vfTGCXDKe435hJgX8s96c19R+dvpH0NHKdX47GA7TmMj+BDiZZ76qqhT"
-      crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/brands.js"
-      integrity="sha384-rsLJp1pKbmeEMVcdsNJfAWZ9FQP5CrQt6Vikj/usZcTgrD28FhqYqKJn5XIaoXjm"
-      crossorigin="anonymous"></script>
-    <script defer
-      src="https://use.fontawesome.com/releases/v5.6.1/js/fontawesome.js"
-      integrity="sha384-T6YzYwAGZAItTIkYlBzfwqa07o9R1AND3Lgt6Or6c5IdukY7tqShoryqwpKrpeIB"
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+      integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
       crossorigin="anonymous"></script>
   </head>
 <!-- ############################################ -->
@@ -183,13 +176,13 @@
                   <label for="name">Name<span class="req">*</span></label>
                   <input id="name" type="text" name="textfield">
                 </div>
-                <div id="email-field" class="field">
-                  <label for="email">Email<span class="req">*</span></label>
-                  <input id="email" type="email" name="textfield">
-                </div>
                 <div id="phone-field" class="field">
                   <label for="phone">Phone</label>
                   <input id="phone" type="tel" name="textfield">
+                </div>
+                <div id="email-field" class="field">
+                  <label for="email">Email<span class="req">*</span></label>
+                  <input id="email" type="email" name="textfield">
                 </div>
                 <div id="message-field" class="field">
                   <label for="message">Message</label>
@@ -219,25 +212,28 @@
 <!-- ############################################ -->
 
     <footer id="footer" role="contentinfo">
-      <div class="footer-contact">
-        <h2>Contact</h2>
-        <ul>
-          <li class="phone">1-800-123-4567</li>
-          <li>
-            <a class="email" href="#">hoofin-it@example.com</a>
-          </li>
-          <li class="address">456 Main Street
-            <br>Austin, TX  78717</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h2>Social</h2>
-        <ul>
-          <li><a href="https://www.facebook.com/agfgoat"><i class="fab fa-facebook-f" aria-hidden="true"></i>Facebook</a></li>
-          <li><a href="https://twitter.com/americanminipig"><i class="fab fa-twitter" aria-hidden="true"></i>Twitter</a></li>
-          <li><a href="https://www.instagram.com/fergustheferret/"><i class="fab fa-instagram" aria-hidden="true"></i>Instagram</a></li>
-        </ul>
+      <div class="container">
+        <div class="footer-contact">
+          <h2 class="visually-hidden">Contact</h2>
+          <ul>
+            <li>
+              <a class="email" href="#"><i class="fas fa-envelope"
+                  aria-hidden="true"></i>hoofin-it@example.com</a>
+            </li>
+            <li class="phone"><i class="fas fa-phone" aria-hidden="true"></i>1-800-123-4567</li>
+            <li class="address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>456 Main Street
+              <br>Austin, TX  78717</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h2 class="visually-hidden">Social</h2>
+          <ul>
+            <li><a href="https://www.facebook.com/agfgoat"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a></li>
+            <li><a href="https://twitter.com/americanminipig"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
+            <li><a href="https://www.instagram.com/fergustheferret/"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>
