@@ -5,7 +5,7 @@
 // Variables -----------------
 
 // Colors
-$pale-gray: #d1e4ed;
+$pale-gray: #dae6ec;
 $light-gray: #a3bbc8;
 $gray: #526772;
 $dark-gray: #2b353c;
@@ -93,8 +93,14 @@ $gutter: 30px;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 @mixin card-clip {
-  -webkit-clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
-  clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 100% 100%, 0% 100%, 0% 40px);
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 100% 100%, 0% 100%, 0% 40px);
+  @include transition;
+  &:hover,
+  &:focus {
+    -webkit-clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
+    clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
+  }
 }
 
 @mixin tooltip-clip {
@@ -1043,12 +1049,8 @@ section {
 .card {
   background: $pale-gray;
   padding: $gutter/2;
-  @include normal-clip;
+  @include card-clip;
   @include transition;
-  &:hover,
-  &:focus {
-    @include card-clip;
-  }
 }
 
 // Card Slider
@@ -1094,50 +1096,30 @@ section {
         }
       }
     }
-
-    svg {
-      width: auto;
-    }
-
-    p {
-      padding-top: $gutter/2;
-      font-family: $serif;
-      font-weight: 300;
-    }
-
-    &:nth-child(3n+1) {
-      svg path {
-        fill: $primary-color;
+  }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .card-wrapper .card {
+      text-align: left;
+      flex-direction: row;
+      @include clearfix;
+      img {
+        height: 100px;
+        width: auto;
+        float: left;
+        margin-bottom: -$gutter/2;
+        padding-right: $gutter/2;
       }
-    }
-
-    &:nth-child(3n+2) {
-      svg path {
-        fill: $light-gray;
-      }
-    }
-
-    &:nth-child(3n) {
-      svg path {
-        fill: $primary-color;
+      h3 {
+        text-align: left;
+        float: left;
       }
     }
   }
-
-  @media (min-width: 768px) {
-    svg {
-      height: 100px;
-    }
-
-    .card p {
-      font-size: 1.5rem;
-      line-height: 2.2rem;
-    }
-  }
-
   @media (max-width: 767px) {
-    svg {
-      height: 70px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .card-wrapper {
+      flex: auto;
     }
   }
 }

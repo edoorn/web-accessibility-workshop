@@ -692,10 +692,11 @@ img {
     padding: 40px 0; } }
 
 .card {
-  background: #d1e4ed;
+  background: #dae6ec;
   padding: 20px;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 100% 100%, 0% 100%, 0% 40px);
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 100% 100%, 0% 100%, 0% 40px);
+  transition: all 0.2s ease;
   transition: all 0.2s ease; }
   .card:hover, .card:focus {
     -webkit-clip-path: polygon(25px 0%, 100% 0%, 100% calc(100% - 40px), calc(100% - 25px) 100%, 0% 100%, 0% 40px);
@@ -740,27 +741,29 @@ img {
         text-decoration: none; }
         .card-group .card-wrapper .card:hover h3, .card-group .card-wrapper .card:focus h3 {
           color: #b8002f; }
-    .card-group .card-wrapper svg {
-      width: auto; }
-    .card-group .card-wrapper p {
-      padding-top: 20px;
-      font-family: "Playfair Display", serif;
-      font-weight: 300; }
-    .card-group .card-wrapper:nth-child(3n+1) svg path {
-      fill: #eb003c; }
-    .card-group .card-wrapper:nth-child(3n+2) svg path {
-      fill: #a3bbc8; }
-    .card-group .card-wrapper:nth-child(3n) svg path {
-      fill: #eb003c; }
-  @media (min-width: 768px) {
-    .card-group svg {
-      height: 100px; }
-    .card-group .card p {
-      font-size: 1.5rem;
-      line-height: 2.2rem; } }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .card-group .card-wrapper .card {
+      text-align: left;
+      flex-direction: row; }
+      .card-group .card-wrapper .card:after {
+        content: '';
+        display: table;
+        clear: both; }
+      .card-group .card-wrapper .card img {
+        height: 100px;
+        width: auto;
+        float: left;
+        margin-bottom: -20px;
+        padding-right: 20px; }
+      .card-group .card-wrapper .card h3 {
+        text-align: left;
+        float: left; } }
   @media (max-width: 767px) {
-    .card-group svg {
-      height: 70px; } }
+    .card-group {
+      flex-wrap: wrap;
+      flex-direction: column; }
+      .card-group .card-wrapper {
+        flex: auto; } }
 
 #why-upgrade {
   background: linear-gradient(#f3f5f7 0%, #ffffff 100%);
@@ -972,7 +975,7 @@ section#bottom {
     display: table;
     clear: both; }
   #contact .contact-cta h2 {
-    color: #d1e4ed;
+    color: #dae6ec;
     margin-top: 0; }
   #contact .contact-cta p {
     color: white; }
