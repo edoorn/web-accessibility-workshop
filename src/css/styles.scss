@@ -198,10 +198,12 @@ a {
   @media (max-width: 767px) {
     text-align: center;
     position: relative;
-    padding-top: $gutter*1.5;
+    // padding-top: $gutter*1.5;
 
     #logo img {
-      width: 280px;
+      width: 200px;
+      float: left;
+      margin-bottom: 14px;
     }
   }
 }
@@ -209,7 +211,6 @@ a {
 // Nav
 #main-nav {
   li {
-    display: inline-block;
     list-style-type: none;
   }
   @media (min-width: 768px) {
@@ -219,6 +220,7 @@ a {
     ul {
       margin: 0;
       li {
+        display: inline-block;
         margin: 0;
         padding: 0;
         a {
@@ -260,50 +262,115 @@ a {
     }
   }
   @media (max-width: 767px) {
-    #main-nav-toggle {
-      display: block;
-      width: 80px;
-      height: 80px;
-      border: none;
-      outline: none;
-      background: $primary-color;
-      position: absolute;
-      top: 0;
-      right: 0;
-      cursor: pointer;
-      .bar {
-        @include transition;
-        display: block;
-        width: 28px;
-        height: 4px;
-        background:white;
-        margin-left: auto;
-        margin-right: auto;
-        @include transition;
-        & + .bar {
-          margin-top:$gutter/5;
+    ul {
+      background: $red;
+      clear: left;
+      margin: 0 -$gutter;
+      padding: 0;
+
+      li {
+        padding: $gutter/2;
+
+        &:first-child {
+          padding-top: $gutter;
+        }
+
+        &:last-child {
+          padding-bottom: $gutter;
+        }
+
+        a {
+          @include link-focus;
+          background: $red;
+          color: #fff;
+          font-size: 1.25rem;
+          font-weight: 800;
+          padding: $gutter/6;
+
+          &:after {
+            background: #fff;
+            top: auto;
+            bottom: 0;
+          }
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
         }
       }
-      &:hover,
-      &:focus {
-        .bar {
-          &.first {
-            transform: rotate(45deg);
-            position:relative;
-            top:13px;
-            left: -6px;
-            width: 20px;
-          }
-          &.last {
-            transform: rotate(-45deg);
-            position:relative;
-            top:-7px;
-            width: 20px;
-            right: -6px;
-          }
-          &.middle {
-            opacity:0;
-          }
+    }
+  }
+}
+
+#main-nav-toggle {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border: none;
+  outline: none;
+  background: $primary-color;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  .bar {
+    @include transition;
+    display: block;
+    width: 28px;
+    height: 4px;
+    background:white;
+    margin-left: auto;
+    margin-right: auto;
+    @include transition;
+    & + .bar {
+      margin-top:$gutter/5;
+    }
+  }
+  .show-nav &,
+  &:hover,
+  &:focus {
+    .bar {
+      &.first {
+        transform: rotate(45deg);
+        position:relative;
+        top: 13px;
+      }
+      &.last {
+        transform: rotate(-45deg);
+        position:relative;
+        top: -7px;
+      }
+      &.middle {
+        opacity:0;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .bar {
+      &.first {
+        left: -6px;
+        width: 20px;
+      }
+      &.last {
+        width: 20px;
+        right: -6px;
+      }
+    }
+  }
+
+  .show-nav & {
+
+    &:hover,
+    &:focus {
+      .bar {
+        &.first {
+          transform: rotate(-45deg);
+        }
+        &.last {
+          transform: rotate(45deg);
         }
       }
     }
