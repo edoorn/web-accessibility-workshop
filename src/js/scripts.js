@@ -1,6 +1,24 @@
 
 $(document).ready(function () {
 
+  // Toggle Main Menu Mobile
+  $('#main-nav-toggle').on("click", function () {
+    $toggle = $(this);
+    $body = $('body');
+    $body.toggleClass('show-nav');
+    $('#header__bottom .menu-item a').toggleAttr('tabindex', -1);
+
+    // Aria Attributes
+    if ($body.hasClass('show-nav')) {
+      $toggle.attr('aria-expanded', 'true');
+      $navLink.removeAttr('tabindex', -1);
+    } else {
+      $toggle.attr('aria-expanded', 'false');
+      $navLink.attr('tabindex', -1);
+    }
+    return false;
+  });
+
   // Form interaction classes
   $('.field input, .field textarea').focus(function () {
     $(this).parent().addClass('focused');

@@ -120,7 +120,7 @@ $gutter: 30px;
     content: '';
     display: block;
     position: absolute;
-    top: calc(100% + 2px);
+    bottom: 0;
     left: 50%;
     height: 4px;
     width: 0%;
@@ -170,7 +170,6 @@ a {
   left: 0;
   .container {
     @include container;
-    padding: $gutter/2 $gutter;
   }
   // Logo
   #logo {
@@ -185,6 +184,7 @@ a {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      padding: $gutter/2 $gutter;
     }
 
     #logo {
@@ -198,7 +198,10 @@ a {
   @media (max-width: 767px) {
     text-align: center;
     position: relative;
-    // padding-top: $gutter*1.5;
+
+    .container {
+      padding: $gutter/2 $gutter 0;
+    }
 
     #logo img {
       width: 200px;
@@ -263,10 +266,13 @@ a {
   }
   @media (max-width: 767px) {
     ul {
+      @include transition;
       background: $red;
       clear: left;
-      margin: 0 -$gutter;
+      margin: 0 (-$gutter);
       padding: 0;
+      max-height: 0;
+      overflow: hidden;
 
       li {
         padding: $gutter/2;
@@ -298,6 +304,12 @@ a {
             text-decoration: none;
           }
         }
+      }
+    }
+
+    .show-nav & {
+      ul {
+        max-height: 30rem;
       }
     }
   }
@@ -1054,7 +1066,7 @@ pre {
 
     .hero-text {
       text-align: center;
-      margin-bottom: $gutter*8;
+      // margin-bottom: $gutter*8;
       padding-bottom: $gutter;
       position: relative;
       z-index: 2;
@@ -1541,7 +1553,7 @@ section#bottom {
     .contact-cta {
       text-align: center;
       padding-bottom: $gutter/2;
-      padding-top: 200px;
+      // padding-top: 200px;
       position: relative;
 
       img {
@@ -1684,7 +1696,6 @@ select:-webkit-autofill {
       justify-content: space-between;
       align-items: center;
       position: relative;
-
     }
   }
 
@@ -1788,6 +1799,7 @@ select:-webkit-autofill {
       color: $light-gray;
       padding-left: $gutter/1.5;
       text-indent: 1rem;
+      margin-bottom: $gutter/6;
     }
     svg {
       margin-right: 10px;
@@ -1799,16 +1811,19 @@ select:-webkit-autofill {
     a {
       color: white;
       @include link-focus;
-      display: table;
       text-decoration: none;
     }
+    .contact {
+      display: table;
+    }
   }
-  @media (min-width: 860px) {
+  @media (min-width: 600px) {
     flex: 2;
     ul {
       column-count: 2;
       column-gap: $gutter;
       column-width: 50%;
+      text-align: left;
     }
   }
 }

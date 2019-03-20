@@ -32,8 +32,7 @@ a {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px;
-    padding: 15px 30px; }
+    padding: 0 30px; }
   #header #logo {
     display: block;
     position: relative; }
@@ -46,7 +45,8 @@ a {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      padding: 15px 30px; }
     #header #logo {
       position: relative;
       display: inline-block; }
@@ -56,7 +56,7 @@ a {
         content: '';
         display: block;
         position: absolute;
-        top: calc(100% + 2px);
+        bottom: 0;
         left: 50%;
         height: 4px;
         width: 0%;
@@ -73,6 +73,8 @@ a {
     #header {
       text-align: center;
       position: relative; }
+      #header .container {
+        padding: 15px 30px 0; }
       #header #logo img {
         width: 200px;
         float: left;
@@ -123,10 +125,13 @@ a {
             clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%); } }
 @media (max-width: 767px) {
   #main-nav ul {
+    transition: all 0.2s ease;
     background: #eb003c;
     clear: left;
-    margin: -30px;
-    padding: 0; }
+    margin: 0 -30px;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden; }
     #main-nav ul li {
       padding: 15px; }
       #main-nav ul li:first-child {
@@ -145,7 +150,7 @@ a {
           content: '';
           display: block;
           position: absolute;
-          top: calc(100% + 2px);
+          bottom: 0;
           left: 50%;
           height: 4px;
           width: 0%;
@@ -163,7 +168,9 @@ a {
           top: auto;
           bottom: 0; }
         #main-nav ul li a:hover, #main-nav ul li a:focus {
-          text-decoration: none; } }
+          text-decoration: none; }
+  .show-nav #main-nav ul {
+    max-height: 30rem; } }
 
 #main-nav-toggle {
   display: block;
@@ -699,7 +706,6 @@ pre {
         padding: 0 40px; }
       #hero .hero-text {
         text-align: center;
-        margin-bottom: 320px;
         padding-bottom: 40px;
         position: relative;
         z-index: 2; }
@@ -1063,7 +1069,6 @@ section#bottom {
     #contact .contact-cta {
       text-align: center;
       padding-bottom: 20px;
-      padding-top: 200px;
       position: relative; }
       #contact .contact-cta img {
         max-width: 120px;
@@ -1235,7 +1240,8 @@ select:-webkit-autofill {
     list-style-type: none;
     color: #a3bbc8;
     padding-left: 26.6666666667px;
-    text-indent: 1rem; }
+    text-indent: 1rem;
+    margin-bottom: 6.6666666667px; }
   .footer-contact ul svg {
     margin-right: 10px;
     margin-left: -40px; }
@@ -1245,13 +1251,12 @@ select:-webkit-autofill {
     color: white;
     position: relative;
     display: inline-block;
-    display: table;
     text-decoration: none; }
     .footer-contact ul a:after {
       content: '';
       display: block;
       position: absolute;
-      top: calc(100% + 2px);
+      bottom: 0;
       left: 50%;
       height: 4px;
       width: 0%;
@@ -1264,10 +1269,13 @@ select:-webkit-autofill {
       left: 0;
       -webkit-clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
       clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%); }
-@media (min-width: 860px) {
+  .footer-contact ul .contact {
+    display: table; }
+@media (min-width: 600px) {
   .footer-contact {
     flex: 2; }
     .footer-contact ul {
       column-count: 2;
       column-gap: 40px;
-      column-width: 50%; } }
+      column-width: 50%;
+      text-align: left; } }
