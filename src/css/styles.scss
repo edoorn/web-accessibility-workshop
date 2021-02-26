@@ -249,8 +249,11 @@ a {
             @include normal-clip;
             @include transition;
           }
-          &:hover,
+          // Remove focus style for demonstration:
           &:focus {
+            text-decoration: none;
+          }
+          &:hover {
             color: white;
             outline: none;
             text-decoration: none;
@@ -956,12 +959,16 @@ a {
   cursor: pointer;
   @include normal-clip;
   @include transition;
-  &:hover,
+  // Comment out for demonstration:
+  // &:hover,
+  // &:focus {
+  //   background-position: 0% 0%;
+  //   font-style: normal;
+  //   text-decoration: none;
+  //   @include angle-clip;
+  // }
   &:focus {
-    background-position: 0% 0%;
-    font-style: normal;
     text-decoration: none;
-    @include angle-clip;
   }
 
   @media (max-width: 600px) {
@@ -1582,7 +1589,21 @@ form {
     @include transition;
   }
 
-  .field {
+  fieldset {
+    border: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-top: $gutter/3;
+  }
+
+  .field, li {
     position: relative;
 
     &+.field {
