@@ -1,263 +1,274 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!-- ############################################ -->
-                <!-- Head -->
-<!-- ############################################ -->
-  <head>
-    <title>Hoofin' It Pet Walking</title>
-    <meta charset='utf-8'>
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <link href="./src/css/styles.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/hi-logomark.png">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="./src/js/scripts.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
-      integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
-      crossorigin="anonymous"></script>
-  </head>
-<!-- ############################################ -->
-                <!-- Body -->
-<!-- ############################################ -->
-  <body>
-<!-- ############################################ -->
-                <!-- Header -->
-<!-- ############################################ -->
-    <!-- ####### Skip Link ####### -->
-    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header id="header">
+<head>
+  <title>Hoofin' It Pet Walking</title>
+  <meta charset='utf-8'>
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link href="./src/css/styles.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="src/img/hi-logomark.png">
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header id="header">
+    <div class="container">
+      <a href="#" id="logo">
+        <img alt="Hoofin' It Pet Walking Services" src="src/img/hi-full-logo.svg">
+      </a>
+      <nav id="main-nav">
+        <h2 class="visually-hidden">Main Menu</h2>
+        <button aria-controls="main-nav-list" aria-expanded="false" aria-haspopup="true" id="main-nav-toggle">
+          <span class="bar first"></span>
+          <span class="bar middle"></span>
+          <span class="bar last">
+            <span class="visually-hidden" id="toggle-text">Menu</span>
+        </button>
+        <ul id="main-nav-list">
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" aria-labelledby="hero-title">
       <div class="container">
-        <a href="#" id="logo">
-          <img alt="Hoofin' It Pet Walking Services" src="src/img/hi-full-logo.svg">
-        </a>
-        <!-- ####### Navigation ####### -->
-        <nav id="main-nav">
-          <h2 class="visually-hidden">Main Menu</h2>
-          <button aria-controls="main-nav-list" aria-expanded="false" aria-haspopup="true" id="main-nav-toggle">
-            <span class="bar first"></span>
-            <span class="bar middle"></span>
-            <span class="bar last">
-              <span class="visually-hidden" id="toggle-text">Menu</span>
-            </button>
-            <ul id="main-nav-list">
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-<!-- ############################################ -->
-              <!-- Main Content -->
-<!-- ############################################ -->
-
-    <main id="main"> <!-- Begin Home Page content -->
-      <section id="hero" aria-labelledby="hero-title">
-        <div class="container">
-          <div class="hero-text">
-            <h1 id="hero-title">We will walk just about anything.</h1>
-            <p>Just kidding! We only walk three kinds of animals. That's right, if you've been wondering how your precious
-              <b>ferret, goat, or teacup pig</b>
-              will get enough exercise, then wonder no more. With our exclusive dedication to these three types of unique exotics, rest assured that your pet is in expert hands.</p>
-            <a class="button" href="#contact" id="#contact-button">Contact Us</a>
-          </div>
-        </div>
-      </section>
-      <section id="experience-section"
-        aria-labelledby="experience-section-title">
-        <div class="container">
-          <h2 id="experience-section-title">Experience like you wouldn't believe</h2>
-          <p>Our trained pet-walkers are full-time professionals. We take our jobs very seriously. No animal is too big, small, fuzzy or stinky for our caring, dedicated handlers. Are you filming a movie? Does your movie require furry actors? We also specialize in Hollywood pet-handling to turn your film into a success!</p>
-        </div>
-        <div class="card-group">
-          <div class="card-wrapper">
-            <a href="#ferret-services" class="card">
-              <img src="src/img/ferret-card.jpg" />
-              <h3>Ferrets</h3>
-            </a>
-          </div>
-          <div class="card-wrapper">
-            <a href="#goat-services" class="card">
-              <img src="src/img/goat-card.jpg" />
-              <h3>Goats</h3>
-            </a>
-          </div>
-          <div class="card-wrapper">
-            <a href="#teacup-pig-services" class="card">
-              <img src="src/img/teacup-pig-card.jpg" />
-              <h3>Teacup Pigs</h3>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="ferret-services" class="panel-section odd">
-        <div class="container">
-          <div class="panel-graphic">
-            <img src="src/img/ferret-1234567.jpg" />
-          </div>
-          <div class="panel-text">
-            <h2>Ferrets</h2>
-            <p><strong>Small, furry, and mischievous? You might be a ferret.</strong></p>
-            <p>Ferrets are crafty, and very good at hunting. "The ferret (Mustela putorius furo) is the domesticated form of the European polecat, a mammal belonging to the same genus as the weasel, Mustela of the family Mustelidae. They typically have brown, black, white, or mixed fur." - Source: Wikipedia</p>
-          </div>
-        </div>
-      </section>
-      <section id="goat-services" class="panel-section even">
-        <div class="container">
-          <div class="panel-graphic">
-            <img src="src/img/goat-1234567.jpg" />
-          </div>
-          <div class="panel-text">
-            <h2>Goats</h2>
-            <p><strong>More than just a barnyard animal.</strong></p>
-            <p>Goats have a long history of cultural symbolism, and are often used as military mascots. "The domestic goat or simply goat (Capra aegagrus hircus) is a subspecies of C. aegagrus domesticated from the wild goat of Southwest Asia and Eastern Europe. The goat is a member of the animal family Bovidae and the goat—antelope subfamily Caprinae, meaning it is closely related to the sheep." - Source: Wikipedia</p>
-          </div>
-        </div>
-      </section>
-      <section id="teacup-pig-services" class=" panel-section odd">
-        <div class="container">
-          <div class="panel-graphic">
-            <img src="src/img/pig-1234567.jpg" />
-          </div>
-          <div class="panel-text">
-            <h2>Teacup Pigs</h2>
-            <p><strong>"I'm just a pig on a mission."</strong></p>
-            <p>Teacup pigs are an deal pet because they are quite intelligent! "Notable features of most miniature pigs distinguishing them from other pigs may be defined by their possession of small, perked-back ears, a potbelly, sway back, chubby figure, rounded head, short snout, legs, and neck, and a short tail with thick hair at the end." - Source: Wikipedia</p>
-          </div>
-        </div>
-        <div class="cloud-border gray"></div>
-      </section>
-      <section id="bottom">
-        <div id="testimonial" class="container">
-          <blockquote>
-            <p><i class="fas fa-quote-left" aria-hidden="true"></i>Well, I have to warn you. I may be small, but I can be ferocious if provoked.<i
-                class="fas fa-quote-right" aria-hidden="true"></i></p>
-            <footer>
-              <span class="author">Babe, Pig In the City</span>
-              <span class="author-job-title">We proudly provide Hollywood walking services</span>
-            </footer>
-          </blockquote>
-        </div>
-      </section>
-      <section id="client-logos" class="container">
-        <a href="http://www.hollywoodanimals.com/" target="_blank"><img
-          src="src/img/logo-ha.jpg" alt="Hollywood Animals" /></a>
-        <a href="https://www.usna.edu/homepage.php" target="_blank"><img src="src/img/logo-usna.jpg" alt="United States Naval Academy" /></a>
-        <a href="https://americanminipigassociation.com/" target="_blank"><img src="src/img/logo-ampa.jpg" alt="American Mini Pig Association" /></a>
-        <a href="https://www.ferret.org/" target="_blank"><img
-            src="src/img/logo-afa.jpg" alt="American Ferret Association" /></a>
-        <a href="https://www.animalplanet.com/" target="_blank"><img src="src/img/logo-ap.jpg" alt="Animal Planet" /></a>
-        <a href="https://www.r22er.com/" target="_blank"><img
-            src="src/img/logo-q22r.jpg"
-            alt="Royal 22nd Regiment of the Canadian Army" /></a>
-        <a href="https://loinc.org/about/our-pig-mascot/" target="_blank"><img
-            src="src/img/logo-loinc.jpg" alt="LOINC" /></a>
-        <a href="https://www.ferret.com/" target="_blank"><img src="src/img/logo-fc.jpg"
-            alt="Ferret.com" /></a>
-        <a href="https://boonesanimals.com/" target="_blank"><img
-            src="src/img/logo-afh.jpg" alt="Animals for Hollywood" /></a>
-        <a href="https://athletics.wpi.edu/landing/index" target="_blank"><img
-            src="src/img/logo-wpi.jpg"
-            alt="Worcester Polytechnic Institute Athletics" /></a>
-        <a href="https://www.uark.edu/athletics/index.php" target="_blank"><img
-            src="src/img/logo-uark.jpg" alt="University of Arkansas Athletics" /></a>
-        <a href="https://www.friendlyferret.com/" target="_blank"><img src="src/img/logo-ff.jpg"
-            alt="Friendly Ferret" /></a>
-      </section>
-        <!-- ############################################ -->
-        <!-- Contact Us -->
-        <!-- ############################################ -->
-        <section id="contact">
-          <div class="container">
-            <div class="contact-cta">
-              <div class="cta-text">
-                <h2>Let's Get In Touch!</h2>
-                <p>Professionalism is our motto. We take great pride in making sure your pets are well taken-care of. Contact us today for a free consulation. Ask us about our grooming services as well!</p>
-              </div>
-            </div>
-            <div class="contact-form">
-              <!-- <form>
-                <div id="name-field" class="field">
-                  <label for="name">Name<span class="req">*</span></label>
-                  <input id="name" type="text" name="textfield">
-                </div>
-                <div id="phone-field" class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" type="tel" name="textfield">
-                </div>
-                <div id="email-field" class="field">
-                  <label for="email">Email<span class="req">*</span></label>
-                  <input id="email" type="email" name="textfield">
-                </div>
-                <div id="message-field" class="field">
-                  <label for="message">Message</label>
-                  <textarea id="message" rows="8"> </textarea>
-                </div>
-                <input type="submit" value="Contact Us" class="button">
-              </form> -->
-              <form class="contact-form">
-                <fieldset>
-                  <ul>
-                    <li><input class="field-name field" id="field-name" name="field-name"
-                      placeholder="Name" type="text"></li>
-                    <li><input class="field-phone field" id="field-phone" name="field-phone"
-                      placeholder="Phone" type="tel"></li>
-                    <li><input class="field-subject field" id="field-subject" name="field-subject"
-                      placeholder="Subject" type="text"></li>
-                    <li><textarea class="field-message field" cols="50" id="field-message"
-                      name="field-message" placeholder="Message" rows="4"></textarea></li>
-                    <li><input id="field-send" class="button" type="submit" value="Send"></li>
-                  </ul>
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-<!-- ############################################ -->
-                <!-- Footer -->
-<!-- ############################################ -->
-
-    <footer id="footer">
-      <div class="container">
-        <div class="footer-contact">
-          <h2 class="visually-hidden">Contact</h2>
-          <ul>
-            <li>
-              <a class="email" href="#"><i class="fas fa-envelope"
-                  aria-hidden="true"></i>hoofin-it@example.com</a>
-            </li>
-            <li>
-              <a class="phone" href="#"><i class="fas fa-phone" aria-hidden="true"></i>1-800-123-4567</a>
-            </li>
-            <li><span class="address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>456 Main Street
-              <br>Austin, TX  78717</span>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h2 class="visually-hidden">Social</h2>
-          <ul>
-            <li><a href="https://www.facebook.com/agfgoat"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a></li>
-            <li><a href="https://twitter.com/americanminipig"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
-            <li><a href="https://www.instagram.com/fergustheferret/"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
-          </ul>
+        <div class="hero-text">
+          <h1 id="hero-title">We will walk just about anything.</h1>
+          <p>Just kidding! We only walk three kinds of animals. That's right, if you've been wondering how your precious
+            <b>ferret, goat, or teacup pig</b>
+            will get enough exercise, then wonder no more. With our exclusive dedication to these three types of unique
+            exotics, rest assured that your pet is in expert hands.
+          </p>
+          <a class="button" href="#contact" id="#contact-button">Contact Us</a>
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section id="experience-section" aria-labelledby="experience-section-title">
+      <div class="container">
+        <h2 id="experience-section-title">Experience like you wouldn't believe</h2>
+        <p>Our trained pet-walkers are full-time professionals. We take our jobs very seriously. No animal is too big,
+          small, fuzzy or stinky for our caring, dedicated handlers. Are you filming a movie? Does your movie require
+          furry actors? We also specialize in Hollywood pet-handling to turn your film into a success!</p>
+      </div>
+      <div class="card-group">
+        <div class="card-wrapper">
+          <a href="#ferret-services" class="card">
+            <img src="src/img/ferret-card.jpg" />
+            <h3>Ferrets</h3>
+          </a>
+        </div>
+        <div class="card-wrapper">
+          <a href="#goat-services" class="card">
+            <img src="src/img/goat-card.jpg" />
+            <h3>Goats</h3>
+          </a>
+        </div>
+        <div class="card-wrapper">
+          <a href="#teacup-pig-services" class="card">
+            <img src="src/img/teacup-pig-card.jpg" />
+            <h3>Teacup Pigs</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="ferret-services" class="panel-section odd">
+      <div class="container">
+        <div class="panel-graphic">
+          <img src="src/img/ferret-1234567.jpg" />
+        </div>
+        <div class="panel-text">
+          <h2>Ferrets</h2>
+          <p><strong>Small, furry, and mischievous? You might be a ferret.</strong></p>
+          <p>Ferrets are crafty, and very good at hunting. "The ferret (Mustela putorius furo) is the domesticated form
+            of the European polecat, a mammal belonging to the same genus as the weasel, Mustela of the family
+            Mustelidae. They typically have brown, black, white, or mixed fur." - Source: Wikipedia</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="goat-services" class="panel-section even">
+      <div class="container">
+        <div class="panel-graphic">
+          <img src="src/img/goat-1234567.jpg" />
+        </div>
+        <div class="panel-text">
+          <h2>Goats</h2>
+          <p><strong>More than just a barnyard animal.</strong></p>
+          <p>Goats have a long history of cultural symbolism, and are often used as military mascots. "The domestic goat
+            or simply goat (Capra aegagrus hircus) is a subspecies of C. aegagrus domesticated from the wild goat of
+            Southwest Asia and Eastern Europe. The goat is a member of the animal family Bovidae and the goat—antelope
+            subfamily Caprinae, meaning it is closely related to the sheep." - Source: Wikipedia</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="teacup-pig-services" class=" panel-section odd">
+      <div class="container">
+        <div class="panel-graphic">
+          <img src="src/img/pig-1234567.jpg" />
+        </div>
+        <div class="panel-text">
+          <h2>Teacup Pigs</h2>
+          <p><strong>"I'm just a pig on a mission."</strong></p>
+          <p>Teacup pigs are an deal pet because they are quite intelligent! "Notable features of most miniature pigs
+            distinguishing them from other pigs may be defined by their possession of small, perked-back ears, a
+            potbelly, sway back, chubby figure, rounded head, short snout, legs, and neck, and a short tail with thick
+            hair at the end." - Source: Wikipedia</p>
+        </div>
+      </div>
+      <div class="cloud-border gray"></div>
+    </section>
+
+    <section id="bottom">
+      <div id="testimonial" class="container">
+        <blockquote>
+          <p><i class="fas fa-quote-left" aria-hidden="true"></i>Well, I have to warn you. I may be small, but I can be
+            ferocious if provoked.<i class="fas fa-quote-right" aria-hidden="true"></i></p>
+          <footer>
+            <span class="author">Babe, Pig In the City</span>
+            <span class="author-job-title">We proudly provide Hollywood walking services</span>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="client-logos" class="container">
+      <a href="http://www.hollywoodanimals.com/" target="_blank"><img src="src/img/logo-ha.jpg"
+          /></a>
+      <a href="https://www.usna.edu/homepage.php" target="_blank"><img src="src/img/logo-usna.jpg"
+          /></a>
+      <a href="https://americanminipigassociation.com/" target="_blank"><img src="src/img/logo-ampa.jpg"
+          /></a>
+      <a href="https://www.ferret.org/" target="_blank"><img src="src/img/logo-afa.jpg"
+          /></a>
+      <a href="https://www.animalplanet.com/" target="_blank"><img src="src/img/logo-ap.jpg" /></a>
+      <a href="https://www.r22er.com/" target="_blank"><img src="src/img/logo-q22r.jpg"
+          alt="Royal 22nd Regiment of the Canadian Army" /></a>
+      <a href="https://loinc.org/about/our-pig-mascot/" target="_blank"><img src="src/img/logo-loinc.jpg"
+          alt="LOINC" /></a>
+      <a href="https://www.ferret.com/" target="_blank"><img src="src/img/logo-fc.jpg" alt="Ferret.com" /></a>
+      <a href="https://boonesanimals.com/" target="_blank"><img src="src/img/logo-afh.jpg"
+          /></a>
+      <a href="https://athletics.wpi.edu/landing/index" target="_blank"><img src="src/img/logo-wpi.jpg"
+          alt="Worcester Polytechnic Institute Athletics" /></a>
+      <a href="https://www.uark.edu/athletics/index.php" target="_blank"><img src="src/img/logo-uark.jpg"
+          alt="University of Arkansas Athletics" /></a>
+      <a href="https://www.friendlyferret.com/" target="_blank"><img src="src/img/logo-ff.jpg"
+          alt="Friendly Ferret" /></a>
+    </section>
+
+    <section id="faqs">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <p class="faq-question">What is your hourly rate for pet walking?</p>
+            <div class="faq-answer disclosure">
+              <p>We will never tell. It is a mystery only explained with hand-waving and the occasional surprise bill in
+                the mail.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">Will you walk my dog?</p>
+            <div class="faq-answer disclosure">
+              <p>No. Unless your dog happens to be a Teacup Pig dressed in a dog suit, we cannot help you.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">What areas do you serve?</p>
+            <div class="faq-answer disclosure">
+              <p>Right now we are only serving the greater metropolitan area of Austin, Texas. Contact us if you'd like to be added to our waiting list.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-cta">
+          <div class="cta-text">
+            <h2>Let's Get In Touch!</h2>
+            <p>Professionalism is our motto. We take great pride in making sure your pets are well taken-care of.
+              Contact us today for a free consultation. Ask us about our grooming services as well!</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div id="name-field" class="field">
+              <label for="name">Name<span class="req">*</span></label>
+              <input id="name" type="text" name="textfield">
+            </div>
+            <div id="phone-field" class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" name="textfield">
+            </div>
+            <div id="email-field" class="field">
+              <label for="email">Email<span class="req">*</span></label>
+              <input id="email" type="email" name="textfield">
+            </div>
+            <div id="message-field" class="field">
+              <label for="message">Message</label>
+              <textarea id="message" rows="8"> </textarea>
+            </div>
+            <input type="submit" value="Contact Us" class="button">
+          </form>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-contact">
+        <h2 class="visually-hidden">Contact</h2>
+        <ul>
+          <li>
+            <a class="email" href="#"><i class="fas fa-envelope" aria-hidden="true"></i>hoofin-it@example.com</a>
+          </li>
+          <li>
+            <a class="phone" href="#"><i class="fas fa-phone" aria-hidden="true"></i>1-800-123-4567</a>
+          </li>
+          <li><span class="address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>456 Main Street
+              <br>Austin, TX 78717</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h2 class="visually-hidden">Social</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/agfgoat"><i class="fab fa-facebook-f"
+                aria-hidden="true"></i><span>Facebook</span></a></li>
+          <li><a href="https://twitter.com/americanminipig"><i class="fab fa-twitter"
+                aria-hidden="true"></i><span>Twitter</span></a></li>
+          <li><a href="https://www.instagram.com/fergustheferret/"><i class="fab fa-instagram"
+                aria-hidden="true"></i><span>Instagram</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./src/js/script.js"></script>
+</body>
+
 </html>
-
-
-
-
-
